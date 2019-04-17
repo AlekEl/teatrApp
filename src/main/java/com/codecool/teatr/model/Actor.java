@@ -1,11 +1,6 @@
 package com.codecool.teatr.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Actor {
@@ -16,8 +11,8 @@ public class Actor {
     private String name;
     private String lastName;
 
-
-//    private Contact contact;
+    @OneToOne
+    private Contact contact;
     //Lista spektakli TODO
     //Lista dat TODO
 
@@ -60,11 +55,11 @@ public class Actor {
         this.lastName = lastName;
     }
 
-   /* public Contact getContact() {
+    public Contact getContact() {
         return contact;
     }
 
     public void setContact(Contact contact) {
         this.contact = contact;
-    }*/
+    }
 }
