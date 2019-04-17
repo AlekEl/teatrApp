@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en", xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Main Page</title>
 </head>
 <body>
-    <div>
-        Works
-    </div>
+<div th:each="actor : ${actors}">
+    <span th:text="${actor.lastName}"></span>
+</div>
 </body>
 </html>

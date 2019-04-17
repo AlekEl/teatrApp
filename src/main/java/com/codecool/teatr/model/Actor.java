@@ -17,6 +17,10 @@ public class Actor {
     //Lista dat TODO
 
 
+    public Actor() {
+
+    }
+
     public Actor(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
