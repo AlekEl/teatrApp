@@ -1,7 +1,15 @@
 package com.codecool.teatr.model;
 
-public class Contact {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Contact {
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private int id;
     private String mail;
     private String phoneNumber;
     private String city;
@@ -16,6 +24,14 @@ public class Contact {
         this.zipCode = zipCode;
         this.number = number;
         this.local = local;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMail() {
