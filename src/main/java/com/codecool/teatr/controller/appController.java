@@ -10,4 +10,15 @@ public class appController {
     public String mainPage() {
         return "stuffPage";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "loginPage";
+        //TODO
+    }
+
+    @GetMapping("/register")
+    public String register(){
+        return "registerForm";
+    }
 }
