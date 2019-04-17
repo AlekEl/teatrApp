@@ -5,11 +5,17 @@ import com.codecool.teatr.model.Actor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ActorService {
 
     @Autowired
     ActorDAO actorDAO;
+
+    public List<Actor> getAllActors() {
+        return actorDAO.findAll();
+    }
 
 
     public void addActor(Actor actor){
