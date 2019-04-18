@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" , xmlns:th="http://www.thymeleaf.org">
+<section class="content-header" th:replace="header.html"></section>
 <body>
+<section class="content-header" th:replace="navbar.html"></section>
 <form th:action="@{'/actor'}" th:object="${actor}" th:method="POST">
     <p>
         <th:block>
-            <p th:text="${actor}"/>
-        </th:block>
+    <p th:text="${actor}"/>
+    </th:block>
     </p>
     <label for="name"><h3>Imię</h3></label>
     <input id="name" th:field="${actor.name}"/>
@@ -18,5 +15,6 @@
     <input id="last_name" th:field="${actor.lastName}"/>
     <button type="submit">Dodaj</button>
 </form>
+<section class="content-header" th:replace="footer.html"></section>
 </body>
 </html>
