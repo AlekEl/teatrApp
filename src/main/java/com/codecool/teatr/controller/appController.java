@@ -28,6 +28,17 @@ public class appController {
         return "mainPage";
     }
 
+    @GetMapping("/login")
+    public String login(){
+        return "loginPage";
+        //TODO
+    }
+
+    @GetMapping("/register")
+    public String register(){
+        return "registerForm";
+    }
+
     @GetMapping("/actor")
     public String addActorForm(Model model) {
         Actor actor = new Actor();
