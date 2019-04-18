@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -22,10 +21,24 @@ public class appController {
         this.actorService = actorService;
     }
 
-    @RequestMapping(method= RequestMethod.GET)
+    @GetMapping({"/", "actors"})
     public String mainPage(Model model) {
         List<Actor> actors = actorService.getAllActors();
         model.addAttribute("actors", actors);
         return "mainPage";
     }
+
+    @GetMapping("/actor")
+    public String addActorForm(Model model) {
+        Actor actor = new Actor();
+        model.addAttribute("actor", actor);
+        return "addActorForm";
+    }
+
+    @PostMapping("/actor")
+    public String addActor(Actor actor) {
+        actorService.addActor(actor);
+        return "redirect:/";
+    }
+
 }
