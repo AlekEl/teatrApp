@@ -18,7 +18,6 @@ public class Actor {
 
 
     public Actor() {
-
     }
 
     public Actor(String name, String lastName) {
@@ -65,5 +64,16 @@ public class Actor {
 
     public void setContact(Contact contact) {
         this.contact = contact;
+    }
+
+    @Override
+    public String toString() {
+        return "Actor{" +
+                "id=" + id +
+                ", salery=" + salery +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", contact=" + contact +
+                '}';
     }
 }
