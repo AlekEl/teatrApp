@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en", xmlns:th="http://www.thymeleaf.org">
+<html lang="en" , xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Main Page</title>
 </head>
 <body>
-<div th:each="actor : ${actors}">
-    <span th:text="${actor.lastName}"></span>
-</div>
+<table border="1">
+    <div th:each="actor : ${actors}">
+        <tr>
+            <td><span th:text="${actor.id}"></span></td>
+            <td><span th:text="${actor.name}"></span></td>
+            <td><span th:text="${actor.lastName}"></span></td>
+        </tr>
+    </div>
+</table>
 </body>
 </html>
