@@ -1,71 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" , xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login Page</title>
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/mdb.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-
-    <style>
-        .form-row{
-            width: 40%;
-            height: 100px;
-            margin:100px auto ;
-        }
-    </style>
+    <section class="content-header" th:replace="header.html"></section>
 </head>
 <body>
-
-<form>
+<section class="content-header" th:replace="navbar.html"></section>
+<form th:object="${user}" th:method="POST">
     <div class="form-row">
         <div class="col-md-4 mb-3 md-form">
-            <label for="validationDefault22">First name</label>
-            <input type="text" class="form-control" id="validationDefault22" value="Mark" required>
+            <label for="user-name">User</label>
+            <input type="text" class="form-control" id="user-name" th:field="${user.fName}" required>
         </div>
         <div class="col-md-4 mb-3 md-form">
-            <label for="validationDefault22">Last name</label>
-            <input type="text" class="form-control" id="validationDefault22" value="Otto" required>
-        </div>
-        <div class="col-md-4 mb-3 md-form">
-            <label for="validationDefaultUsername22">Username</label>
-            <input type="text" class="form-control" id="validationDefaultUsername22" aria-describedby="inputGroupPrepend23"
-                   required>
+            <label for="user-lastname">Password</label>
+            <input type="password" class="form-control" id="user-lastname" th:field="${user.password}" required>
         </div>
     </div>
-    <div class="form-row">
-        <div class="col-md-6 mb-3 md-form">
-            <label for="validationDefault22">City</label>
-            <input type="text" class="form-control" id="validationDefault22" required>
-        </div>
-        <div class="col-md-3 mb-3 md-form">
-            <label for="validationDefault22">State</label>
-            <input type="text" class="form-control" id="validationDefault22" required>
-        </div>
-        <div class="col-md-3 mb-3 md-form">
-            <label for="validationDefault22">Zip</label>
-            <input type="text" class="form-control" id="validationDefault22" required>
-        </div>
+    <!--<div class="col-md-4 mb-3 md-form">
+        <label for="validationDefaultUsername22">Username</label>
+        <input type="text" class="form-control" id="validationDefaultUsername22" aria-describedby="inputGroupPrepend23"
+               required>
     </div>
-    <div class="form-group">
-        <div class="form-check pl-0">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck222" required>
-            <label class="form-check-label" for="invalidCheck222">
-                Agree to terms and conditions
-            </label>
-        </div>
+</div>
+<div class="form-row">
+    <div class="col-md-6 mb-3 md-form">
+        <label for="validationDefault22">City</label>
+        <input type="text" class="form-control" id="validationDefault22" required>
     </div>
-    <button class="btn btn-primary btn-sm" type="submit">Submit form</button>
+    <div class="col-md-3 mb-3 md-form">
+        <label for="validationDefault22">State</label>
+        <input type="text" class="form-control" id="validationDefault22" required>
+    </div>
+    <div class="col-md-3 mb-3 md-form">
+        <label for="validationDefault22">Zip</label>
+        <input type="text" class="form-control" id="validationDefault22" required>
+    </div>
+</div>
+<div class="form-group">
+    <div class="form-check pl-0">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck222" required>
+        <label class="form-check-label" for="invalidCheck222">
+            Agree to terms and conditions
+        </label>
+    </div>
+</div>-->
+    <a href="@{'/user'}" th:method="POST">
+        <button class="btn btn-primary btn-sm" type="submit">Register</button>
+    </a>
 </form>
-
-
-<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="/js/popper.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/mdb.min.js"></script>
+<section class="content-header" th:replace="footer.html"></section>
 </body>
 </html>
