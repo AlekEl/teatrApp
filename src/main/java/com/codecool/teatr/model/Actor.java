@@ -11,8 +11,8 @@ public class Actor {
     private String name;
     private String lastName;
 
-    @OneToOne
-    private Contact contact;
+//    @OneToOne
+//    private Contact contact;
     //Lista spektakli TODO
     //Lista dat TODO
 
@@ -58,7 +58,7 @@ public class Actor {
         this.lastName = lastName;
     }
 
-    public Contact getContact() {
+    /*public Contact getContact() {
         return contact;
     }
 
@@ -75,5 +75,5 @@ public class Actor {
                 ", lastName='" + lastName + '\'' +
                 ", contact=" + contact +
                 '}';
-    }
+    }*/
 }

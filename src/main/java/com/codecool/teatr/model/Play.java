@@ -1,5 +1,7 @@
 package com.codecool.teatr.model;
 
+import java.util.List;
+
 public class Play {
     private int id;
     private String name;
