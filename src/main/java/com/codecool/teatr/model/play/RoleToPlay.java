@@ -1,6 +1,6 @@
-package com.codecool.teatr.model;
+package com.codecool.teatr.model.play;
 
-public class Role {
+public class RoleToPlay {
     private int id;
     private String name;
     private String linkToMaterials;

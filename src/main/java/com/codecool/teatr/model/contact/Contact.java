@@ -1,6 +1,4 @@
-package com.codecool.teatr.model;
-
-import javax.persistence.Entity;
+package com.codecool.teatr.model.contact;
 
 public class Contact {
     private int id;

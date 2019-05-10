@@ -1,7 +1,8 @@
 package com.codecool.teatr.model.user;
 
-public class Technical extends User {
+public class Technical extends Staff {
+    private TechnicalFunctions technicalFunction;
+
     public Technical() {
-        setUserType(UserType.TECHNICAL);
     }
 }

@@ -1,7 +1,6 @@
 package com.codecool.teatr.model.user;
 
-public class Administator extends User {
+public class Administator extends Management {
     public Administator() {
-        setUserType(UserType.ADMINISTRATOR);
     }
 }

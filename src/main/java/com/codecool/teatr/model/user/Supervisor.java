@@ -1,7 +1,6 @@
 package com.codecool.teatr.model.user;
 
-public class Supervisor extends User {
+public class Supervisor extends Management {
     public Supervisor() {
-        setUserType(UserType.SUPERVISOR);
     }
 }

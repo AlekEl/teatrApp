@@ -1,4 +1,4 @@
-package com.codecool.teatr.model;
+package com.codecool.teatr.model.contact;
 
 public class Address {
     private int id;

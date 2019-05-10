@@ -1,4 +1,4 @@
-package com.codecool.teatr.model;
+package com.codecool.teatr.model.spectacle;
 
 public enum SpectacleType {
     SPECTACLE,

@@ -1,7 +1,11 @@
 package com.codecool.teatr.model.user;
 
-public class Actor extends User {
+import com.codecool.teatr.model.play.RoleToPlay;
+
+import java.util.List;
+
+public class Actor extends Staff {
+    private List<RoleToPlay> roleToPlays;
     public Actor() {
-        setUserType(UserType.ACTOR);
     }
 }
