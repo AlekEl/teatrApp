@@ -1,4 +1,4 @@
-package com.codecool.teatr.model;
+package com.codecool.teatr.model.todelete;
 
 import com.codecool.teatr.util.EncryptedPasswordUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class User {
     }
 
     /*@ManyToMany
-        private List<Role> roles;
+        private List<RoleToPlay> roles;
     */
     public Long getId() {
         return id;

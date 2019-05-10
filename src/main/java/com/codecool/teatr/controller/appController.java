@@ -1,14 +1,13 @@
 package com.codecool.teatr.controller;
 
-import com.codecool.teatr.model.Actor;
-import com.codecool.teatr.model.User;
+import com.codecool.teatr.model.todelete.Actor;
+import com.codecool.teatr.model.todelete.User;
 import com.codecool.teatr.service.ActorService;
 import com.codecool.teatr.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;

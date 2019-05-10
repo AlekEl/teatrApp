@@ -1,7 +1,7 @@
 package com.codecool.teatr.service;
 
 import com.codecool.teatr.dao.ActorDAO;
-import com.codecool.teatr.model.Actor;
+import com.codecool.teatr.model.todelete.Actor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
