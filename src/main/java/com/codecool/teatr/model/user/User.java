@@ -3,12 +3,16 @@ package com.codecool.teatr.model.user;
 import com.codecool.teatr.model.contact.Address;
 import com.codecool.teatr.model.contact.Contact;
 
-import java.util.List;
+import javax.persistence.*;
 
+@Entity(name = "USERS")
 public abstract class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int id;
+
+    @OneToOne
     private Contact contact;
-    private List<Contact> contacts;
     private Address address;
 
     public int getId() {
@@ -27,19 +31,20 @@ public abstract class User {
         this.contact = contact;
     }
 
-    public List<Contact> getContacts() {
-        return contacts;
-    }
-
-    public void setContacts(List<Contact> contacts) {
-        this.contacts = contacts;
-    }
-
     public Address getAddress() {
         return address;
     }
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", contact=" + contact +
+                ", address=" + address +
+                '}';
     }
 }

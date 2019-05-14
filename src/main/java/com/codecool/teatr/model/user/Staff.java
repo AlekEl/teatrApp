@@ -10,4 +10,21 @@ public abstract class Staff extends User {
     private List<Spectacle> attendedToSpectacles;
     private List<Spectacle> addedToSpectacle;
     private List<Date> availableDates;
+
+    public void addBusyTerm(Date date) {
+    }
+
+    public List<Spectacle> getPlayedSpectacles() {
+        return null;
+    }
+
+    public List<Spectacle> getFutureSpectacles() {
+        return null;
+    }
+
+    public void exportCalendar() {
+    }
+
+    public void importCalendar() {
+    }
 }
