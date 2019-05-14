@@ -2,14 +2,25 @@ package com.codecool.teatr.model.user;
 
 import com.codecool.teatr.model.spectacle.Spectacle;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@DiscriminatorValue("Staff")
 public abstract class Staff extends User {
     private double paymentPerSpectacle;
+    @OneToMany
+    @JoinColumn
     private List<Spectacle> attendedToSpectacles;
+    @OneToMany
+    @JoinColumn
     private List<Spectacle> addedToSpectacle;
-    private List<Date> availableDates;
+   /* @OneToMany
+    private List<Date> availableDates;*/
 
     public void addBusyTerm(Date date) {
     }

@@ -1,8 +1,13 @@
 package com.codecool.teatr.model.user;
 
-public class Organiser extends User {
-    private java.util.List<com.codecool.teatr.model.spectacle.Spectacle> orderedSpectacles;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
-    public Organiser() {
-    }
+@Entity
+@DiscriminatorValue("Organiser")
+public class Organiser extends User {
+//    private List<Spectacle> orderedSpectacles;
+
+    private String test;
+
 }

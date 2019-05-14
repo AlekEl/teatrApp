@@ -1,10 +1,15 @@
 package com.codecool.teatr.model.play;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Play {
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int id;
     private String name;
-    private java.util.List<RoleToPlay> roleToPlays;
-    private List<String> authors;
+    @OneToMany
+    private List<RoleToPlay> roleToPlays;
+//    private List<String> authors;
 }

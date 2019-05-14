@@ -6,6 +6,7 @@ import com.codecool.teatr.model.contact.Contact;
 import javax.persistence.*;
 
 @Entity(name = "USERS")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class User {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
@@ -13,6 +14,7 @@ public abstract class User {
 
     @OneToOne
     private Contact contact;
+    @OneToOne
     private Address address;
 
     public int getId() {
