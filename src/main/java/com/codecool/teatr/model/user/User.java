@@ -9,13 +9,12 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "contact_id", referencedColumnName = "id")
     private Contact contact;
-    @OneToOne
-    private Address address;
 
     public int getId() {
         return id;
@@ -33,12 +32,8 @@ public abstract class User {
         this.contact = contact;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
+    public User(Contact contact) {
+        this.contact = contact;
     }
 
     @Override
@@ -46,7 +41,6 @@ public abstract class User {
         return "User{" +
                 "id=" + id +
                 ", contact=" + contact +
-                ", address=" + address +
                 '}';
     }
 }

@@ -1,5 +1,6 @@
 package com.codecool.teatr.model.user;
 
+import com.codecool.teatr.model.contact.Contact;
 import com.codecool.teatr.model.spectacle.Spectacle;
 
 import javax.persistence.DiscriminatorValue;
@@ -13,14 +14,19 @@ import java.util.List;
 @DiscriminatorValue("Staff")
 public abstract class Staff extends User {
     private double paymentPerSpectacle;
-    @OneToMany
+    /*@OneToMany
     @JoinColumn
     private List<Spectacle> attendedToSpectacles;
     @OneToMany
     @JoinColumn
-    private List<Spectacle> addedToSpectacle;
+    private List<Spectacle> addedToSpectacle;*/
    /* @OneToMany
     private List<Date> availableDates;*/
+
+    public Staff(Contact contact, double paymentPerSpectacle) {
+        super(contact);
+        this.paymentPerSpectacle = paymentPerSpectacle;
+    }
 
     public void addBusyTerm(Date date) {
     }

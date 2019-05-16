@@ -1,5 +1,7 @@
 package com.codecool.teatr.model.user;
 
+import com.codecool.teatr.model.contact.Contact;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -11,4 +13,8 @@ public class Actor extends Staff {
 
     private String testColumn;
 
+    public Actor(Contact contact, double paymentPerSpectacle, String testColumn) {
+        super(contact, paymentPerSpectacle);
+        this.testColumn = testColumn;
+    }
 }

@@ -13,13 +13,13 @@ public class Spectacle {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private int id;
 
-    @ManyToOne
+    @OneToOne
     private Play play;
     private Date date;
     private Date startTime;
     private SpectacleType spectacleType;
-    @OneToOne
-    private Address spectaclePlace;
+    /*@OneToOne
+    private Address spectaclePlace;*/
     private boolean isDealSend = false; //umowa
     private SpectacleStatus status = SpectacleStatus.NIEZATWIERDZONY;
 //    private User organiser;
