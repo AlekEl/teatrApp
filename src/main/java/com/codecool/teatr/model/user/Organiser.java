@@ -8,12 +8,8 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("Organiser")
 public class Organiser extends User {
-//    private List<Spectacle> orderedSpectacles;
 
-    private String test;
-
-    public Organiser(Contact contact, String test) {
+    public Organiser(Contact contact) {
         super(contact);
-        this.test = test;
     }
 }

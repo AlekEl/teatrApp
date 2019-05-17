@@ -1,6 +1,5 @@
 package com.codecool.teatr.model.user;
 
-import com.codecool.teatr.model.contact.Address;
 import com.codecool.teatr.model.contact.Contact;
 
 import javax.persistence.*;

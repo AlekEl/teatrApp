@@ -9,12 +9,7 @@ import javax.persistence.Entity;
 @DiscriminatorValue("Actor")
 public class Actor extends Staff {
 
-//    private List<RoleToPlay> roleToPlays;
-
-    private String testColumn;
-
-    public Actor(Contact contact, double paymentPerSpectacle, String testColumn) {
+    public Actor(Contact contact, double paymentPerSpectacle) {
         super(contact, paymentPerSpectacle);
-        this.testColumn = testColumn;
     }
 }
