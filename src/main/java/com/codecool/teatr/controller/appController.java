@@ -25,50 +25,19 @@ public class appController {
         this.actorService = actorService;
     }
 
-    @GetMapping({"/", "/actors"})
-    public String mainPage(Model model) {
-        List<Actor> actors = actorService.getAllActors();
-        model.addAttribute("actors", actors);
-        return "mainPage";
+    @GetMapping("/")
+    public String mainPage() {
+        return "index";
+    }
+
+    @GetMapping("/register")
+    public String register(){
+        return "registerForm";
     }
 
     @GetMapping("/login")
     public String login(){
         return "loginPage";
-        //TODO
-    }
-
-    @GetMapping("/register")
-    public String registerForm(Model model){
-        User user = new User();
-        model.addAttribute("user", user);
-        return "registerForm";
-    }
-
-    @PostMapping("/register")
-    public String register(User user) {
-        userService.addUser(user);
-        System.out.println(user);
-        return "redirect: /user";
-    }
-
-    @PostMapping("/user")
-    public String userDetails(User user){
-        System.out.println(user);
-        return "userDetails";
-    }
-
-    @GetMapping("/actor")
-    public String addActorForm(Model model) {
-        Actor actor = new Actor();
-        model.addAttribute("actor", actor);
-        return "addActorForm";
-    }
-
-    @PostMapping("/actor")
-    public String addActor(Actor actor) {
-        actorService.addActor(actor);
-        return "redirect:/";
     }
 
 }

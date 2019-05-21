@@ -1,6 +1,5 @@
 package com.codecool.teatr.model.todelete;
 
-import com.codecool.teatr.util.EncryptedPasswordUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
@@ -17,9 +16,9 @@ public class User {
     private String password;
     private boolean tokenExpired;
 
-    @Autowired
-    @Transient
-    private EncryptedPasswordUtil encryptedPasswordUtil;
+//    @Autowired
+//    @Transient
+//    private EncryptedPasswordUtil encryptedPasswordUtil;
 
     public User() {
 //        encryptedPasswordUtil = new EncryptedPasswordUtil();
@@ -56,10 +55,10 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = encryptedPasswordUtil.encryptPassword(password);
-//        this.password = password;
-    }
+//    public void setPassword(String password) {
+//        this.password = encryptedPasswordUtil.encryptPassword(password);
+////        this.password = password;
+//    }
 
     public boolean isTokenExpired() {
         return tokenExpired;
