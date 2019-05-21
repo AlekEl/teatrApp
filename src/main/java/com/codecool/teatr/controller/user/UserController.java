@@ -1,7 +1,6 @@
 package com.codecool.teatr.controller.user;
 
 import com.codecool.teatr.model.contact.Address;
-import com.codecool.teatr.model.contact.Contact;
 import com.codecool.teatr.model.user.Administrator;
 import com.codecool.teatr.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +13,17 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/h")
-    public String index() {
+    public String index2() {
         Address address = new Address("ulica","65","9","00-000","waw");
-        Contact contact = new Contact(address, "Waldek", "Jakiśtam", "organiser@ccc", "99999999");
-        Administrator administrator = new Administrator(contact);
+        Administrator administrator = new Administrator();
+        administrator.setAddress(address);
         userService.addUser(administrator);
-        System.out.println();
+        System.out.println(administrator);
         return "mainPage";
+    }
+
+    @GetMapping("/")
+    public String index() {
+        return "redirect:/h";
     }
 }

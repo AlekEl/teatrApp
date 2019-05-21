@@ -1,6 +1,6 @@
 package com.codecool.teatr.model.user;
 
-import com.codecool.teatr.model.contact.Contact;
+import com.codecool.teatr.model.contact.Address;
 
 import javax.persistence.*;
 
@@ -9,37 +9,68 @@ import javax.persistence.*;
 public abstract class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int userId;
+    private String name;
+    private String surname;
+    private String mail;
+    private String phone;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "contact_id", referencedColumnName = "id")
-    private Contact contact;
+    @JoinColumn(name = "addressId", referencedColumnName = "addressId")
+    private Address address;
 
     public int getId() {
-        return id;
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int userId) {
+        this.userId = userId;
     }
 
-    public Contact getContact() {
-        return contact;
+    public String getName() {
+        return name;
     }
 
-    public void setContact(Contact contact) {
-        this.contact = contact;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public User(Contact contact) {
-        this.contact = contact;
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", contact=" + contact +
+                "userId=" + userId +
                 '}';
     }
 }

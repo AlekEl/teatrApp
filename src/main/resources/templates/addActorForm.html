@@ -10,9 +10,9 @@
     </th:block>
     </p>
     <label for="name"><h3>Imię</h3></label>
-    <input id="name" th:field="${actor.name}"/>
+    <input userId="name" th:field="${actor.name}"/>
     <label for="last_name"><h3>Nazwisko</h3></label>
-    <input id="last_name" th:field="${actor.lastName}"/>
+    <input userId="last_name" th:field="${actor.lastName}"/>
     <button type="submit">Dodaj</button>
 </form>
 <section class="content-header" th:replace="footer.html"></section>

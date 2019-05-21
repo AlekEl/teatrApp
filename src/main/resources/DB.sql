@@ -66,7 +66,7 @@ alter table technical_functions owner to codecool;
 create table if not exists users
 (
 	dtype varchar(31) not null,
-	user_id serial not null
+	userId serial not null
 		constraint users_pkey
 			primary key,
 	payment_per_spectacle double precision,
@@ -93,7 +93,7 @@ create table if not exists play_staff
 	role_to_play_id integer not null
 		constraint play_staff_role_to_play_role_to_play_id_fk
 			references role_to_play,
-	user_id integer not null
+	userId integer not null
 		constraint play_staff_users_user_id_fk
 			references users
 );
