@@ -1,53 +1,167 @@
 <!DOCTYPE html>
-<html lang="en" , xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <section class="content-header" th:replace="header.html"></section>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="assets/registerForm/css/opensans-font.css">
+    <link rel="stylesheet" type="text/css"
+          href="assets/registerForm/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="assets/registerForm/css/style.css"/>
 </head>
 <body>
-<section class="content-header" th:replace="navbar.html"></section>
-<form th:object="${user}" th:method="POST">
-    <div class="form-row">
-        <div class="col-md-4 mb-3 md-form">
-            <label for="user-name">User</label>
-            <input type="text" class="form-control" userId="user-name" th:field="${user.fName}" required>
+<div class="page-content">
+    <div class="form-v1-content">
+        <div class="wizard-form">
+            <form class="form-register" action="#" method="post">
+                <div id="form-total">
+                    <!-- SECTION 1 -->
+                    <h2>
+                        <p class="step-icon"><span>01</span></p>
+                        <span class="step-text">Peronal Infomation</span>
+                    </h2>
+                    <section>
+                        <div class="inner">
+                            <div class="wizard-header">
+                                <h3 class="heading">Peronal Infomation</h3>
+                                <p>Please enter your infomation and proceed to the next step so we can build your
+                                    accounts. </p>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <fieldset>
+                                        <legend>First Name</legend>
+                                        <input type="text" class="form-control" id="first-name" name="first-name"
+                                               placeholder="First Name" required>
+                                    </fieldset>
+                                </div>
+                                <div class="form-holder">
+                                    <fieldset>
+                                        <legend>Last Name</legend>
+                                        <input type="text" class="form-control" id="last-name" name="last-name"
+                                               placeholder="Last Name" required>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2">
+                                    <fieldset>
+                                        <legend>Your Email</legend>
+                                        <input type="text" name="your_email" id="your_email" class="form-control"
+                                               pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com"
+                                               required>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2">
+                                    <fieldset>
+                                        <legend>Phone Number</legend>
+                                        <input type="text" class="form-control" id="phone" name="phone"
+                                               placeholder="+1 888-999-7777" required>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION 2 -->
+                    <h2>
+                        <p class="step-icon"><span>02</span></p>
+                        <span class="step-text">Address</span>
+                    </h2>
+                    <section>
+                        <div class="inner">
+                            <div class="wizard-header">
+                                <h3 class="heading">Address</h3>
+                                <p>Please enter your address and proceed to the next step so we can build your
+                                    accounts. </p>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <fieldset>
+                                        <legend>City</legend>
+                                        <input type="text" class="form-control" id="city" name="city"
+                                               placeholder="City" required>
+                                    </fieldset>
+                                </div>
+                                <div class="form-holder">
+                                    <fieldset>
+                                        <legend>Street</legend>
+                                        <input type="text" class="form-control" id="street" name="street"
+                                               placeholder="Street" required>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2">
+                                    <fieldset>
+                                        <legend>Number</legend>
+                                        <input type="text" name="number" id="number" class="form-control"
+                                               pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Number" required>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <fieldset>
+                                        <legend>Local</legend>
+                                        <input type="text" class="form-control" id="local" name="local"
+                                               placeholder="Local" required>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder form-holder-2">
+                                    <fieldset>
+                                        <legend>Zip code</legend>
+                                        <input type="text" class="form-control" id="zipcode" name="zip_code"
+                                               placeholder="00-000" required>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- SECTION 3 -->
+                    <h2>
+                        <p class="step-icon"><span>03</span></p>
+                        <span class="step-text">Password</span>
+                    </h2>
+                    <section>
+                        <div class="inner">
+                            <div class="wizard-header">
+                                <h3 class="heading">Password</h3>
+                                <p>Please enter your password to finish build your account. </p>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <fieldset>
+                                        <legend>Password</legend>
+                                        <input type="text" class="form-control" id="password" name="password"
+                                               placeholder="Password" required>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-holder">
+                                    <fieldset>
+                                        <legend>Repeat Password</legend>
+                                        <input type="text" class="form-control" id="repeat_password" name="repeat_password"
+                                               placeholder="Password" required>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </form>
         </div>
-        <div class="col-md-4 mb-3 md-form">
-            <label for="user-lastname">Password</label>
-            <input type="password" class="form-control" userId="user-lastname" th:field="${user.password}" required>
-        </div>
-    </div>
-    <!--<div class="col-md-4 mb-3 md-form">
-        <label for="validationDefaultUsername22">Username</label>
-        <input type="text" class="form-control" userId="validationDefaultUsername22" aria-describedby="inputGroupPrepend23"
-               required>
     </div>
 </div>
-<div class="form-row">
-    <div class="col-md-6 mb-3 md-form">
-        <label for="validationDefault22">City</label>
-        <input type="text" class="form-control" userId="validationDefault22" required>
-    </div>
-    <div class="col-md-3 mb-3 md-form">
-        <label for="validationDefault22">State</label>
-        <input type="text" class="form-control" userId="validationDefault22" required>
-    </div>
-    <div class="col-md-3 mb-3 md-form">
-        <label for="validationDefault22">Zip</label>
-        <input type="text" class="form-control" userId="validationDefault22" required>
-    </div>
-</div>
-<div class="form-group">
-    <div class="form-check pl-0">
-        <input class="form-check-input" type="checkbox" value="" userId="invalidCheck222" required>
-        <label class="form-check-label" for="invalidCheck222">
-            Agree to terms and conditions
-        </label>
-    </div>
-</div>-->
-    <a href="@{'/user'}" th:method="POST">
-        <button class="btn btn-primary btn-sm" type="submit">Register</button>
-    </a>
-</form>
-<section class="content-header" th:replace="footer.html"></section>
-</body>
+<script src="assets/registerForm/js/jquery-3.3.1.min.js"></script>
+<script src="assets/registerForm/js/jquery.steps.js"></script>
+<script src="assets/registerForm/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
