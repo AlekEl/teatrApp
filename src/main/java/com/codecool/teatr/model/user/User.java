@@ -19,6 +19,14 @@ public abstract class User {
     @JoinColumn(name = "addressId", referencedColumnName = "addressId")
     private Address address;
 
+    public User(String name, String surname, String mail, String phone, Address address) {
+        this.name = name;
+        this.surname = surname;
+        this.mail = mail;
+        this.phone = phone;
+        this.address = address;
+    }
+
     public int getId() {
         return userId;
     }

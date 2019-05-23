@@ -12,15 +12,15 @@ public class UserController {
     @Autowired
     UserService userService;
 
-//    @GetMapping("/h")
-//    public String index2() {
-//        Address address = new Address("ulica","65","9","00-000","waw");
-//        Administrator administrator = new Administrator();
-//        administrator.setAddress(address);
-//        userService.addUser(administrator);
-//        System.out.println(administrator);
-//        return "mainPage";
-//    }
+    @GetMapping("/h")
+    public String index2() {
+        Address address = new Address("ulica","65","9","00-000","waw");
+        Administrator administrator = new Administrator("Boguś","Bo","123@","22222",address);
+        administrator.setAddress(address);
+        userService.addUser(administrator);
+        System.out.println(administrator);
+        return "index";
+    }
 //
 
     @GetMapping("/")
@@ -36,5 +36,10 @@ public class UserController {
     @GetMapping("/login")
     public String login(){
         return "loginPage";
+    }
+
+    @GetMapping("/user/{id}/edit")
+    public String edit(){
+        return "editForm";
     }
 }
