@@ -12,4 +12,8 @@ public abstract class Management extends User {
     public Management(String name, String surname, String mail, String phone, Address address) {
         super(name, surname, mail, phone, address);
     }
+
+    public Management() {
+    }
 }
+

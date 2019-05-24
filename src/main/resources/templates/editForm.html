@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset=UTF-8>
     <title>Edit</title>
 </head>
 <body>
 <p>EDIT PAGE</p>
+<form th:method="POST" th:action="'/users/'+${user.get().id}+'/edit'">
+    <p>First name:</p>
+    <input th:name="name" type="text" name="firstname" th:value="${user.get().getName()}">
 
-<form  action="/action_page.php">
-    First name:<br>
-    <input type="text" name="firstname" value="Mickey">
-    <br>
-    Last name:<br>
-    <input type="text" name="lastname" value="Mouse">
+    <p>Surname</p>
+    <input th:name="lastname" type="text" name="lastname" th:value="${user.get().getSurname()}">
+
+    <p>Phone number</p>
+    <input th:name="phone" type="text" name="phone" th:value="${user.get().getPhone()}">
+    <p>City:</p>
+    <input th:name="city" type="text" name="firstname" th:value="${user.get().getAddress().getCity()}">
+    <p>Zip-Code:</p>
+    <input th:name="zipCode" type="text" name="firstname" th:value="${user.get().getAddress().getZipCode()}">
+    <p>Street:</p>
+    <input th:name="street" type="text" name="firstname" th:value="${user.get().getAddress().getStreet()}">
+    <p>Number:</p>
+    <input th:name="number" type="text" name="firstname" th:value="${user.get().getAddress().getNumber()}">
+    <p>Local:</p>
+    <input th:name="local" type="text" name="firstname" th:value="${user.get().getAddress().getLocal()}">
     <br><br>
     <input type="submit" value="Submit">
 </form>
-
+</div>
 </body>
 </html>

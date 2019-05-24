@@ -12,4 +12,7 @@ public class Administrator extends Management {
     public Administrator(String name, String surname, String mail, String phone, Address address) {
         super(name, surname, mail, phone, address);
     }
+
+    public Administrator() {
+    }
 }
