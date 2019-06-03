@@ -2,10 +2,17 @@ package com.codecool.teatr.controller.user;
 
 import com.codecool.teatr.model.contact.Address;
 import com.codecool.teatr.model.user.Administrator;
+import com.codecool.teatr.model.user.TempUser;
+import com.codecool.teatr.model.user.User;
 import com.codecool.teatr.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
 
 @Controller
 public class UserController {
@@ -28,9 +35,19 @@ public class UserController {
         return "index";
     }
 
-    @GetMapping("/register")
-    public String register(){
-        return "registerForm";
+    @RequestMapping(value="/register", method = RequestMethod.GET)
+    public ModelAndView showRegistrationPage(ModelAndView modelAndView, TempUser user, Address address){
+        modelAndView.addObject("user", user);
+        modelAndView.addObject("address", address);
+        modelAndView.setViewName("registerForm");
+        return modelAndView;
+    }
+
+    @RequestMapping(value="/register", method = RequestMethod.POST)
+    public ModelAndView showRegistrationPage(ModelAndView modelAndView, @Valid User user){
+        userService.addUser(user);
+        modelAndView.setViewName("registerForm");
+        return modelAndView;
     }
 
     @GetMapping("/login")

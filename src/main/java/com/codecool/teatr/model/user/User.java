@@ -14,6 +14,9 @@ public abstract class User {
     private String surname;
     private String mail;
     private String phone;
+    private String password;
+    @Transient
+    private String passwordConfirm;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "addressId", referencedColumnName = "addressId")
@@ -65,6 +68,22 @@ public abstract class User {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
     }
 
     @Override

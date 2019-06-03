@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>Register</title>
@@ -16,7 +16,7 @@
 <div class="page-content">
     <div class="form-v1-content">
         <div class="wizard-form">
-            <form class="form-register" action="#" method="post">
+            <form class="form-register" id="registerForm" method="post" th:action="@{/register}">
                 <div id="form-total">
                     <!-- SECTION 1 -->
                     <h2>
@@ -35,14 +35,14 @@
                                     <fieldset>
                                         <legend>First Name</legend>
                                         <input type="text" class="form-control" id="first-name" name="first-name"
-                                               placeholder="First Name" required>
+                                               th:value="${user.name}" placeholder="First Name" required>
                                     </fieldset>
                                 </div>
                                 <div class="form-holder">
                                     <fieldset>
                                         <legend>Last Name</legend>
                                         <input type="text" class="form-control" id="last-name" name="last-name"
-                                               placeholder="Last Name" required>
+                                               th:value="${user.surname}" placeholder="Last Name" required>
                                     </fieldset>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                                         <legend>Your Email</legend>
                                         <input type="text" name="your_email" id="your_email" class="form-control"
                                                pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com"
-                                               required>
+                                               th:value="${user.name}" required>
                                     </fieldset>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                     <fieldset>
                                         <legend>Phone Number</legend>
                                         <input type="text" class="form-control" id="phone" name="phone"
-                                               placeholder="+1 888-999-7777" required>
+                                               th:value="${user.phone}" placeholder="+1 888-999-7777" required>
                                     </fieldset>
                                 </div>
                             </div>
@@ -84,14 +84,14 @@
                                     <fieldset>
                                         <legend>City</legend>
                                         <input type="text" class="form-control" id="city" name="city"
-                                               placeholder="City" required>
+                                               th:value="${address.city}" placeholder="City" required>
                                     </fieldset>
                                 </div>
                                 <div class="form-holder">
                                     <fieldset>
                                         <legend>Street</legend>
                                         <input type="text" class="form-control" id="street" name="street"
-                                               placeholder="Street" required>
+                                               th:value="${address.street}" placeholder="Street" required>
                                     </fieldset>
                                 </div>
                             </div>
@@ -100,7 +100,8 @@
                                     <fieldset>
                                         <legend>Number</legend>
                                         <input type="text" name="number" id="number" class="form-control"
-                                               pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Number" required>
+                                               th:value="${address.number}" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
+                                               placeholder="Number" required>
                                     </fieldset>
                                 </div>
                             </div>
@@ -109,7 +110,7 @@
                                     <fieldset>
                                         <legend>Local</legend>
                                         <input type="text" class="form-control" id="local" name="local"
-                                               placeholder="Local" required>
+                                               th:value="${address.local}" placeholder="Local" required>
                                     </fieldset>
                                 </div>
                             </div>
@@ -118,7 +119,7 @@
                                     <fieldset>
                                         <legend>Zip code</legend>
                                         <input type="text" class="form-control" id="zipcode" name="zip_code"
-                                               placeholder="00-000" required>
+                                               th:value="${address.zipCode}" placeholder="00-000" required>
                                     </fieldset>
                                 </div>
                             </div>
@@ -140,7 +141,7 @@
                                     <fieldset>
                                         <legend>Password</legend>
                                         <input type="text" class="form-control" id="password" name="password"
-                                               placeholder="Password" required>
+                                               th:value="${user.password}" placeholder="Password" required>
                                     </fieldset>
                                 </div>
                             </div>
@@ -149,7 +150,7 @@
                                     <fieldset>
                                         <legend>Repeat Password</legend>
                                         <input type="text" class="form-control" id="repeat_password" name="repeat_password"
-                                               placeholder="Password" required>
+                                               th:value="${user.passwordConfirm}" placeholder="Password" required>
                                     </fieldset>
                                 </div>
                             </div>
