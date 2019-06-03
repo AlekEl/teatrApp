@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 public abstract class Staff extends User {
     private double paymentPerSpectacle;
 
-    public Staff(String name, String surname, String mail, String phone, Address address) {
-        super(name, surname, mail, phone, address);
+    public Staff(String name, String surname, String mail, String phone, Address address, String password) {
+        super(name, surname, mail, phone, address, password);
     }
 }

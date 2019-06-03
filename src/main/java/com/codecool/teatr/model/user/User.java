@@ -14,17 +14,19 @@ public abstract class User {
     private String surname;
     private String mail;
     private String phone;
+    private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "addressId", referencedColumnName = "addressId")
     private Address address;
 
-    public User(String name, String surname, String mail, String phone, Address address) {
+    public User(String name, String surname, String mail, String phone, Address address, String password) {
         this.name = name;
         this.surname = surname;
         this.mail = mail;
         this.phone = phone;
         this.address = address;
+        this.password = password;
     }
 
     public User() {
@@ -76,6 +78,14 @@ public abstract class User {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

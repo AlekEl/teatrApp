@@ -5,7 +5,6 @@ import com.codecool.teatr.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
 import java.util.Optional;
 
 @Service
@@ -17,8 +16,11 @@ public class UserService {
         userDao.save(user);
     }
 
-    public Optional<User> getUserById(int id){
+    public Optional<User> getUserById(int id) {
         return Optional.ofNullable(userDao.getOne(id));
     }
 
+    public Optional<User> getUserByMail(String mail) {
+        return Optional.ofNullable(userDao.findByMailEquals(mail));
+    }
 }

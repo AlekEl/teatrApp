@@ -4,6 +4,7 @@ import com.codecool.teatr.model.contact.Address;
 import com.codecool.teatr.model.user.Administrator;
 import com.codecool.teatr.model.user.User;
 import com.codecool.teatr.service.UserService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +25,7 @@ public class UserController {
     @GetMapping("/h")
     public String index2() {
         Address address = new Address("ulica", "65", "9", "00-000", "waw");
-        Administrator administrator = new Administrator("Boguś", "Bo", "123@", "22222", address);
+        Administrator administrator = new Administrator("Mieczysław", "Bo", "gb1@mail.com", "22222", address, "123");
         administrator.setAddress(address);
         userService.addUser(administrator);
         return "index";
@@ -41,8 +42,20 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String loginForm() {
         return "loginPage";
+    }
+
+    @PostMapping
+    public String login(@RequestParam (value = "email") String email, @RequestParam(value = "password") String password) {
+        User user = userService.getUserByMail(email).get();
+        int userId = user.getId();
+//        String password = user.ge
+        if (user.getMail().equals(email) && user.getPassword().equals(password)) {
+            return "redirect:/users/" + userId;
+        } else {
+            return "error";
+        }
     }
 
     @GetMapping("/users/{id}/edit")
@@ -82,7 +95,8 @@ public class UserController {
         address.setLocal(local);
 
         userService.addUser(userToUpdate.get());
-        return "redirect:/";
+//        return "redirect:/";
+        return "redirect:/users/" + id;
     }
 
     @GetMapping("/users/{id}")

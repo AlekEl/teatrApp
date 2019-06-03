@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("Supervisor")
 public class Supervisor extends Management {
-    public Supervisor(String name, String surname, String mail, String phone, Address address) {
-        super(name, surname, mail, phone, address);
+    public Supervisor(String name, String surname, String mail, String phone, Address address, String password) {
+        super(name, surname, mail, phone, address, password);
     }
 }

@@ -22,7 +22,17 @@
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#">Log out</a></li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Settings</a>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" th:href="'/users/'+${user.get().id}+'/edit'">Edit</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" role="presentation" th:href="'/users/'+${user.get().id}+'/edit'">
+                                    Edit
+                                </a>
+                                <a class="dropdown-item" role="presentation" href="#">
+                                    Second Item
+                                </a>
+                                <a class="dropdown-item" role="presentation" href="#">
+                                    Third Item
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -12,15 +13,21 @@
 
 <body>
 <div class="login-dark">
-    <form method="post">
+    <form th:action="@{/login}" th:method="post"><!--th:action="/loginP" th:method="post">--> <!--method="post" action="/loginP"-->
         <h2 class="sr-only">Login Form</h2>
-        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-        <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password">
+        <div class="illustration">
+            <i class="icon ion-ios-locked-outline"></i>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">Log In</button>
+            <input th:name="email" class="form-control" type="email" name="email" placeholder="Email">
         </div>
+        <div class="form-group">
+            <input th:name="password" class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" th:type="submit" >Log In</button>
+        </div>
+
     </form>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

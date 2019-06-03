@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 @DiscriminatorValue("Organiser")
 public class Organiser extends User {
 
-    public Organiser(String name, String surname, String mail, String phone, Address address) {
-        super(name, surname, mail, phone, address);
+    public Organiser(String name, String surname, String mail, String phone, Address address, String password) {
+        super(name, surname, mail, phone, address, password);
     }
 }
